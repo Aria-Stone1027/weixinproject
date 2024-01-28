@@ -1,0 +1,23 @@
+<xr-scene ar-system="modes:Marker" bind:ready="handleReady">
+  <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
+   <xr-asset-load
+      type="video-texture" asset-id="hikari"
+      src="https://play.1001b.cn/b110605dvodtranscq1257837729/f7ea55673270835014787219258/v.f100040.mp4?t=65b61c7f&us=a0cdea299b5f46768f352e82a4ba518c&sign=914fdc852a2a6a51e623c033bde4656a" options="loop:true"
+    />
+
+    <xr-asset-load type="gltf" asset-id="miku" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/butterfly/index.glb" />
+
+    <xr-asset-material asset-id="mat" effect="simple" uniforms="u_baseColorMap: video-hikari" />
+  </xr-assets>
+  <xr-env env-data="xr-frame-team-workspace-day" />
+  <xr-node wx:if="{{loaded}}">
+    <xr-ar-tracker mode="Marker" src="http://8.140.253.36/zs/picture.png" bind:ar-tracker-switch="handleTrackerSwitch">
+      <xr-mesh node-id="mesh-plane" geometry="plane" material="mat" />
+    </xr-ar-tracker>
+    <xr-gltf model="miku" position="0 0.5 0" scale="1 1 1" rotation="0 180 0" anim-autoplay />
+    <xr-camera
+      id="camera" node-id="camera" position="1 1 1" clear-color="0.925 0.925 0.925 1"
+      background="ar" is-ar-camera
+    />
+  </xr-node>
+</xr-scene>
