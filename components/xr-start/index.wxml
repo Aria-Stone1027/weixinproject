@@ -4,7 +4,7 @@
       type="video-texture" asset-id="hikari"
       src="https://play.1001b.cn/b110605dvodtranscq1257837729/f7ea55673270835014787219258/v.f100040.mp4?t=65b61c7f&us=a0cdea299b5f46768f352e82a4ba518c&sign=914fdc852a2a6a51e623c033bde4656a" options="loop:true"
     />
-
+<!--图片和视频以及动画固定-->
     <xr-asset-load type="gltf" asset-id="miku" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/butterfly/index.glb" />
 
     <xr-asset-material asset-id="mat" effect="simple" uniforms="u_baseColorMap: video-hikari" />
